@@ -1,0 +1,206 @@
+/*
+ * 入力時に付加するclass
+ */
+ form.wpcf7-form-mode-edit{
+	
+}
+
+/*
+ * 確認時に付加するclass
+ */
+form.wpcf7-form-mode-confirm{
+	
+}
+form.wpcf7-form-mode-confirm th{	/* 問い合わせページのプレビューで、<TH>の幅が広がりすぎるので  */
+	width:180px;
+}
+
+/*
+ * 「確認へ」を押したときの入力チェックでひっかかった時に表示するメッセージ
+ */
+form.wpcf7-form ul.error-messages{
+	color:#DC0003;
+}
+form.wpcf7-form ul.error-messages li::before {
+    background: #DC0003;
+}
+form.wpcf7-form ul.error-messages li{
+	margin:0;
+	
+}
+
+/*
+ * 入力チェックに引っかかったときに tr.addClass('error')
+ */
+form.wpcf7-form table tr td .error input,
+form.wpcf7-form table tr td .error select{
+	background-color:#FFC2C2;
+}
+
+/*
+ * プレビュー時のテキスト
+ */
+form.wpcf7-form table td span.wpcf7-form-control-wrap-confirm,{
+	color:#333;
+}
+
+/*
+ * ボタンエリア、確認へ
+ */
+form.wpcf7-form p.buttons-area-confirm,
+form.wpcf7-form p.buttons-area{
+	padding:20px;
+	text-align:center;
+}
+
+/*
+ * ボタンエリア、書き直す、送信（「書き直す」が加わるため位置調整）
+ */
+form.wpcf7-form p.buttons-area .button-rewrite{
+	margin-right:20px;
+}
+form.wpcf7-form p.buttons-area .wpcf7-submit{
+	margin-left:20px;
+}
+
+
+
+#wrap_contact{
+	width: 700px;
+}
+#wrap_contact table{
+	width: 100%;
+	border-collapse: collapse;
+	border: solid #CCC;
+	border-width: 1px;
+}
+#wrap_contact table tr th,
+#wrap_contact table tr td{
+	padding: 0.5em;
+	text-align: left;
+	vertical-align: top;
+	border: solid #CCC;
+	border-width: 1px;
+}
+#wrap_contact table tr th{
+	width: 35%;
+	background: #eee;
+}
+#wrap_contact input[type="text"],
+#wrap_contact input[type="email"],
+#wrap_contact textarea{
+	padding: 0.7em;
+	width: 90%;
+	font-size:16px;
+	border:1px solid #CCC;
+}
+.wpcf7-form-mode-edit #wrap_contact input[type="button"].button-confirm, 
+.wpcf7-form-mode-confirm #wrap_contact input[type="submit"] {
+	background: #ee5656;
+	height: 60px;
+	font-size: 20px;
+	letter-spacing: 0.1em;
+	width: 300px;
+	display: inline;
+	font-weight: bold;
+	cursor: pointer;
+	color: #fff;
+	border: 0;
+	border-radius: 5px;
+}
+.wpcf7-form-mode-confirm #wrap_contact input[type="button"].button-rewrite {
+	background: #666666;
+	height: 60px;
+	font-size: 20px;
+	letter-spacing: 0.1em;
+	width: 300px;
+	font-weight: bold;
+	cursor: pointer;
+	color: #fff;
+	border: 0;
+	border-radius: 5px;
+}
+#wrap_contact table th span{
+	color: #fff;
+	background: #DC0003;
+	padding: 3px 3px;
+	font-size: 11px;
+	margin-left: 10px;
+	border-radius: 3px;
+	letter-spacing: 0.2em;
+}
+.wpcf7-form-mode-confirm #wrap_contact table th span,
+.wpcf7-form-mode-confirm #wrap_contact .txt_edit,
+.wpcf7-form-mode-confirm #wrap_contact .txt_sent{
+	display:none;
+}
+.wpcf7-form-mode-edit #wrap_contact .txt_confirm,
+.wpcf7-form-mode-edit #wrap_contact .txt_sent{
+	display:none;
+}
+.sent #wrap_contact .txt_confirm,
+.sent #wrap_contact .txt_edit,
+.sent #wrap_contact table,
+.sent #wrap_contact h2{
+	display:none;
+}
+.sent #wrap_contact .txt_sent{
+	display:block;
+}
+div.wpcf7-mail-sent-ok {
+	border: none;
+	padding:0;
+	margin:0;
+}
+@media screen and (max-width:768px){
+	#wrap_contact{
+		width: 100%;
+	}
+	#wrap_contact table,
+	#wrap_contact table tbody,
+	#wrap_contact table tr,
+	#wrap_contact table tr th,
+	#wrap_contact table tr td{
+		display: block;
+	}
+	#wrap_contact table{
+		width: 100%;
+		border-width: 0 0 1px 0;
+	}
+	#wrap_contact table tr th,
+	#wrap_contact table tr td{
+		width: 90%;
+		padding: 3% 5%;
+	}
+	#wrap_contact table tr td{
+		border-width: 0px 1px 0px 1px;
+	}
+}
+.button_wrap{
+	color: #fff;
+	position: relative;
+	line-height: 2.8em;
+	width: 130px;
+	margin:0 auto;
+  }
+  .button_wrap::after{
+	content: "";
+	width: .6em;
+	height: .6em;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: -133px;
+	margin: auto;
+	// -webkit-transform: rotate(45deg);
+	//   -ms-transform: rotate(45deg);
+	//   transform: rotate(45deg);
+	background-image:  url(/assets/img/icons/icon_arrow-right.svg);
+  }
+  .button_wrap:hover::after{
+	right: 12px;
+  }
+  input[type="submit"]:hover {
+	background: #134767;
+  }
+  

@@ -1,0 +1,23 @@
+// -----------------------------------------------------------------
+// Component Box Style
+// -----------------------------------------------------------------
+
+.c-box {
+	border: 1px solid $very-light-grey;
+	margin: $moduleMarginSP 0;
+	padding: 14px;
+	&--bg {
+		background: $white3;
+	}
+	&__heading {
+		font-size: 20px;
+		font-weight: bold;
+		line-height: 1.5;
+		padding: 6px 0 6px 12px;
+		border-left: 4px solid $black;
+	}
+	@include mq(ld) {
+		margin: $moduleMarginPC 0;
+		padding: 32px;
+	}
+}

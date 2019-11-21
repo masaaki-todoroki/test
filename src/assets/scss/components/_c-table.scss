@@ -1,0 +1,94 @@
+// -----------------------------------------------------------------
+// Component Table Style
+// -----------------------------------------------------------------
+
+.c-table {
+	box-sizing: border-box;
+	margin: $moduleMarginPC 0;
+	width: 100%;
+	text-align: left;
+	&__caption {
+		color: $brownish-grey;
+		font-size: 13px;
+		margin-bottom: 16px;
+		text-align: left;
+		&--right {
+			text-align: right;
+		}
+	}
+	tr {
+		display: flex;
+		justify-content: space-between;
+		&:last-child {
+			th, td {
+				border-bottom: 1px solid $very-light-grey;
+			}
+		}
+	}
+	th, td {
+		border-top: 1px solid $very-light-grey;
+		padding: 16px;
+		width: calc( 100% / 3 - 18px);
+	}
+	th {
+		font-weight: bold;
+	}
+	&--half {
+		th, td {
+			width: calc( 100% / 2 - 16px);
+		}
+	}
+	&--1to2 {
+		th, td {
+			&:first-child {
+				width: calc( 100% / 3 - 16px);
+			}
+			&:last-child {
+				width: calc( 100% - calc( 100% / 3 ) - 16px );
+			}
+		}
+	}
+	&--1to3 {
+		th, td {
+			&:first-child {
+				width: calc( 100% / 4 - 16px);
+			}
+			&:last-child {
+				width: calc( 100% - calc( 100% / 4 ) - 16px );
+			}
+		}
+	}
+	@include mq(md) {
+		margin: $moduleMarginSP 0;
+		tr {
+			flex-wrap: wrap;
+			&:last-child {
+				border-bottom: 1px solid $very-light-grey;
+			th, td {
+				border-bottom: none;
+			}
+			}
+		}
+		th, td {
+			width: 100%;
+			padding: 8px 16px;
+			&:first-child {
+				padding-top: 16px;
+			}
+			&:last-child {
+				padding-bottom: 16px;
+			}
+		}
+		td {
+			border-top: none;
+		}
+		&--half, &--1to2, &--1to3 {
+			th, td {
+				width: 100%;
+				&:first-child, &:last-child {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

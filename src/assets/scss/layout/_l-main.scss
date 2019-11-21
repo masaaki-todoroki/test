@@ -1,0 +1,43 @@
+// -----------------------------------------------------------------
+// Layout Main Style
+// -----------------------------------------------------------------
+.l-main {
+	background: $white1;
+	margin-top: $headerHeightSP;
+	&__content {
+		@include content;
+		&--full{
+			max-width: initial;
+			padding: $basicMarginSP 20px;
+		}
+		&--about {
+			background-image: url(/assets/img/about/bg_lead-sp.jpg);
+			background-position: 50% 50%;
+			background-size: cover;
+			background-repeat: no-repeat;
+			padding: 46px 20px;
+			text-align: left;
+		}
+	}
+	@include mq(mld) {
+		&__content {
+			&--about {
+				padding: 146px 0;
+				text-align: center;
+			}
+		}
+	}
+	@include mq(ld) {
+		margin-top: $headerHeightPC;
+		&__content {
+			&--full{
+			padding: 0;
+			}
+			&--about {
+			background-image: url(/assets/img/about/bg_lead-pc.jpg);
+			padding: 146px 0;
+			text-align: center;
+			}
+		}
+	}
+}

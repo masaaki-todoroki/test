@@ -1,0 +1,20 @@
+// -----------------------------------------------------------------
+// Component Paragraph Style
+// -----------------------------------------------------------------
+.c-paragraph {
+	color: $black;
+	font-size: 16px;
+	margin-top: $parapraphMarginPC;
+	&--left {
+		text-align: left;
+	}
+	&--center {
+		text-align: center;
+	}
+	&--right {
+		text-align: right;
+	}
+	@include mq(md) {
+		margin-top: $parapraphMarginSP;
+	}
+}

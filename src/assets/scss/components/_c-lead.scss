@@ -1,0 +1,12 @@
+// -----------------------------------------------------------------
+// Component lead Style
+// -----------------------------------------------------------------
+.c-lead {
+	color: $white1;
+	font-size: 20px;
+	font-weight: bold;
+	@include mq(ld) {
+		font-size: 24px;
+		text-align: center;
+	}
+}

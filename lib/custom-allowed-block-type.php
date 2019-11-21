@@ -1,0 +1,46 @@
+<?php
+
+function custom_allowed_block_types( $allowed_block_types, $post ) {
+	$allowed_block_types = array(
+		'core/paragraph',
+		'core/image',
+		'core/video',
+		'core/file',
+		'core/table',
+		'core/columns',
+		'core/shortcode',
+		'core-embed/youtube',
+		'core-embed/slideshare',
+		'core/block',
+		'aoitheme/h2',
+		'aoitheme/h3',
+		'aoitheme/h3-bg',
+		'aoitheme/h4',
+		'aoitheme/p-left',
+		'aoitheme/p-center',
+		'aoitheme/p-right',
+		'aoitheme/postscript',
+		'aoitheme/link-block-self',
+		'aoitheme/link-block-blank',
+		'aoitheme/hr',
+		'aoitheme/box-bg-white-heading', 
+		'aoitheme/box-bg-white',
+		'aoitheme/box-bg-gray-heading',
+		'aoitheme/box-bg-gray',
+		'aoitheme/box-heading',
+		'aoitheme/unmarked-list',
+		'aoitheme/nakaguro-list',
+		'aoitheme/order-list',
+		'aoitheme/alpha-list',
+		'aoitheme/note-list',
+		'aoitheme/link-list',
+		'aoitheme/link-list-blank',
+		'aoitheme/link-list-pdf',
+		'aoitheme/table-caption-left',
+		'aoitheme/table-caption-right',
+		'aoitheme/clearfix',
+		'webfactory/map',
+	);
+	return $allowed_block_types;
+}
+add_filter( 'allowed_block_types', 'custom_allowed_block_types', 10, 2 );

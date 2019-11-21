@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+@import "foundation/variable";
+@import "foundation/mixin";
+@import "foundation/reset";
+@import "foundation/base";
+
+// use @import gulp-sass-glob
+// EX. @import "folder_name/**";
+@import "layout/l-footer";
+@import "layout/l-header";
+@import "layout/l-main";
+
+@import "components/c-box";
+@import "components/c-figure";
+@import "components/c-float";
+@import "components/c-grid";
+@import "components/c-heading";
+@import "components/c-hr";
+@import "components/c-lead";
+@import "components/c-link";
+@import "components/c-list";
+@import "components/c-movie";
+@import "components/c-panel";
+@import "components/c-paragraph";
+@import "components/c-table";
+
+// -----------------------------------------------------------------
+// Web font
+// -----------------------------------------------------------------
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap&subset=japanese');

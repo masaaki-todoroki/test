@@ -1,0 +1,52 @@
+// -----------------------------------------------------------------
+// Component Link Style
+// -----------------------------------------------------------------
+
+// 文中リンク（汎用）
+.c-link {
+	color: $black;
+	text-decoration: underline;
+	&:hover {
+		opacity: 1;
+		text-decoration: none;
+	}
+}
+
+// 段落外のリンク
+.c-link-block {
+	margin: 16px 0;
+	&__anchor {
+		color: $black;
+		position: relative;
+		&:hover {
+			opacity: 1;
+			text-decoration: underline;
+		}
+		&--self {
+			padding-left: 23px;
+			display: block;
+			&:before {
+			background: url(/assets/img/icons/icon_arrow-right-circle.svg) top left no-repeat;
+			background-size: 14px 14px;
+			content: "";
+			position: absolute;
+			top: 6px;
+			left: 0;
+			width: 14px;
+			height: 14px;
+			}
+		}
+		&--blank {
+			&:after {
+			background: url(/assets/img/icons/icon_outside.svg) bottom right no-repeat;
+			background-size: 16px 16px;
+			content: "";
+			display: inline-block;
+			position: relative;
+			bottom: -2px;
+			width: 24px;
+			height: 16px;
+			}
+		}
+	}
+}

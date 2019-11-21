@@ -1,0 +1,104 @@
+// -----------------------------------------------------------------
+// Component List Style
+// -----------------------------------------------------------------
+
+// リスト（デフォルト）
+.c-list {
+	$this: &;
+	list-style: none;
+	margin: $moduleMarginPC 0;
+	&__item {
+		margin: 16px 0;
+		position: relative;
+	}
+	&__anchor {
+		color: $black;
+		text-decoration: none;
+		&:hover {
+			opacity: 1;
+			text-decoration: underline;
+		}
+	}
+	&__pdf {
+		font-weight: bold;
+		padding-left: 27px;
+		position: relative;
+		&:before {
+			background: url(/assets/img/icons/icon_pdf.svg) top left no-repeat;
+			background-size: 16px 23px;
+			content: "";
+			width: 16px;
+			height: 23px;
+			position: absolute;
+			top: 2px;
+			left: 8px;
+		}
+	}
+	&--disc {
+		#{$this}__item {
+			padding-left: 27px;
+			&:before {
+				background: $black;
+				border-radius: 100%;
+				content: "";
+				display: inline-block;
+				position: absolute;
+				top: 11px;
+				left: 8px;
+				width: 4px;
+				height: 4px;
+			}
+		}
+	}
+	&--decimal {
+		list-style: decimal;
+		padding-left: 18px;
+		#{$this}__item {
+			padding-left: 9px;
+		}
+	}
+	&--note {
+		#{$this}__item {
+			padding-left: 27px;
+			&:before {
+				display: inline-block;
+				content: "※";
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+	}
+	&--link {
+		#{$this}__anchor {
+			padding-left: 27px;
+			position: relative;
+			display: block;
+			&:before {
+				background: url(/assets/img/icons/icon_arrow-right-circle.svg) top left no-repeat;
+				background-size: 14px 14px;
+				content: "";
+				position: absolute;
+				top: 6px;
+				left: 0;
+				width: 14px;
+				height: 14px;
+			}
+			&--blank {
+			&:after {
+				background: url(/assets/img/icons/icon_outside.svg) top right no-repeat;
+				background-size: 16px 16px;
+				content: "";
+				display: inline-block;
+				position: relative;
+				bottom: -2px;
+				width: 24px;
+				height: 16px;
+			}
+			}
+		}
+	}
+	@include mq(md) {
+		margin: $moduleMarginSP 0;
+	}
+}

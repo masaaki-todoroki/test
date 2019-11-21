@@ -1,0 +1,11 @@
+// -----------------------------------------------------------------
+// Component HR Style
+// -----------------------------------------------------------------
+
+.c-hr {
+	border-top: 1px solid $very-light-grey;
+	margin: $moduleMarginSP 0;
+	@include mq(ld) {
+		margin: $moduleMarginPC 0;
+	}
+}

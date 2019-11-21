@@ -1,0 +1,36 @@
+// -----------------------------------------------------------------
+// Component Float Style
+// -----------------------------------------------------------------
+
+.c-float {
+	margin-top: $moduleMarginPC;
+	&:after {
+		display: block;
+		clear: both;
+		content: "";
+	}
+	&__right {
+		float: right;
+		width: calc( 100% / 3 - 16px);
+		margin-left: 32px;
+	}
+	&__left {
+		float: left;
+		width: calc( 100% / 3 - 16px);
+		margin-right: 32px;
+	}
+	&__right, &__left {
+		&+*, &>* {
+			margin-top: 0 !important;
+		}
+	}
+	@include mq(md) {
+		margin-top: $moduleMarginSP;
+		&__right, &__left {
+			float: none;
+			margin-left: 0;
+			margin-right: 0;
+			width: 100%;
+		}
+	}
+}

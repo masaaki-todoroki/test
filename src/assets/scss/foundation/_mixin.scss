@@ -1,0 +1,33 @@
+@mixin mq($mqValue) {
+	@each $name in $mqValue {
+		@if $name == 'sd' {
+			@media only screen and (max-width: 320px) { @content; }
+		} @else if $name == 'md' {
+			@media screen and (max-width: 639px) { @content; }
+		} @else if $name == 'mld' {
+			@media screen and (min-width: 640px) and (max-width: 959px) { @content; }
+		} @else if $name == 'ld' {
+			@media screen and (min-width: 960px) { @content; }
+		} @else if $name == 'ld-max' {
+			@media screen and (min-width: 1281px) { @content; }
+		} @else if $name == 'print' {
+			@media print { @content; }
+		} @else {
+			@media screen and (min-width: $mqValue + px) { @content; }
+		}
+	}
+}
+
+@mixin content {
+	box-sizing: border-box;
+	margin: 0 auto;
+	padding: $basicMarginPC 15px 0;
+	width: 100%;
+	max-width: $contentWidth;
+	@include mq(mld) {
+		padding: $basicMarginSP 15px 0;
+	}
+	@include mq(md) {
+		padding: $basicMarginSP 18px 0;
+	}
+}

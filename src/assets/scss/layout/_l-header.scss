@@ -1,0 +1,253 @@
+// -----------------------------------------------------------------
+// Layout Header Style
+// -----------------------------------------------------------------
+.l-header {
+	$this: &;
+	box-sizing: border-box;
+	font-family: $ff-ibm;
+	font-weight: bold;
+	line-height: 1;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 99;
+	&__nav {
+		box-sizing: border-box;
+		margin: 0 auto;
+		position: relative;
+		width: 100%;
+		transition: all 0.2s linear;
+	}
+	&__menu {
+		&-item {
+			list-style: none;
+			position: relative;
+			a {
+				color: $black;
+				font-weight: bold;
+			}
+		}
+	}
+	&__pop {
+		background: $black;
+		box-sizing: border-box;
+		display: none;
+		&--active {
+			display: block;
+		}
+		&-item {
+			list-style: none;
+			a {
+			color: $white1;
+			font-size: 14px;
+			font-weight: normal;
+			position: relative;
+			}
+		}
+	}
+	@include mq(ld) {
+		background: $white1;
+		border-bottom: 1px solid $very-light-grey;
+		display: flex;
+		justify-content: space-between;
+		&__nav {
+			padding: 24px 0;
+			&--narrow {
+			padding: 11px 0;
+			}
+		}
+		&__mobile, &__logo , &__menu {
+			display: inline-block;
+			vertical-align: middle;
+		}
+		&__logo {
+			margin: 0 80px 0 16px;
+			img {
+			width: 120px;
+			height: 23px;
+			}
+		}
+		&__menu {
+			&-button {
+			display: none;
+			}
+			&-item {
+			display: inline-block;
+			margin-right: 40px;
+			padding: 12px 0 8px;
+			&--current {
+				border-bottom: 4px solid $azul;
+			}
+			&--lang {
+				background: $white2;
+				margin-right: 0;
+				padding: 0;
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: $headerHeightPC;
+				height: 100%;
+				a {
+				display: block;
+				line-height: $headerHeightPC;
+				text-align: center;
+				width: 100%;
+				height: 100%;
+				transition: all 0.2s linear;
+				}
+				&--narrow {
+				a {
+					line-height: 65px;
+				}
+				}
+			}
+			}
+			&-arrow {
+			background: url(../img/icons/icon_arrow.svg) 100% 75% no-repeat;
+			background-size: 9px 5px;
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			}
+		}
+		&__pop {
+			box-shadow: 0 4px 8px 0 rgba(34, 34, 34, 0.25);
+			padding: 24px 24px 8px 24px;
+			position: absolute;
+			top: calc( 100% + 28px );
+			left: -84px;
+			width: 240px;
+			&:before {
+				content: "";
+				position: absolute;
+				top: -20px;
+				left: 50%;
+				margin-left: -14px;
+				border: 10px solid transparent;
+				border-bottom: 14px solid $black;
+			}
+			&-item {
+				margin: 0 0 16px;
+				a {
+					padding: 0 0 0 16px;
+					&:before {
+						border-top: 1px solid $white1;
+						border-right: 1px solid $white1;
+						content: "";
+						position: absolute;
+						top: 5px;
+						left: 0;
+						transform: rotate(45deg);
+						vertical-align: middle;
+						width: 7px;
+						height: 7px;
+					}
+				}
+			}
+		}
+	}
+	@include mq(mld) {
+		&__mobile {
+			background: $white1;
+			border-bottom: 1px solid $very-light-grey;
+			display: flex;
+			justify-content: space-between;
+			padding: 20px;
+		}
+		&__logo {
+			img {
+				width: 105px;
+				height:20px;
+			}
+		}
+		&__menu-button {
+			position: relative;
+			width: 32px;
+		}
+		&__button-bar {
+			background: $black;
+			display: block;
+			position: absolute;
+			top: 8px;
+			left: 0;
+			width: 100%;
+			height: 4px;
+			&:first-child {
+				top: 0px;
+			}
+			&:last-child {
+				top: 16px;
+			}
+		}
+		&__menu {
+			background: $white1;
+			border-bottom: 1px solid $very-light-grey;
+			padding: 20px;
+			display: none;
+			&--active {
+				display: block;
+			}
+			&-item {
+				margin: 8px 0;
+			}
+		}
+		&__pop {
+			padding: 20px;
+			&-item {
+				margin: 8px 0;
+			}
+		}
+	}
+	@include mq(md) {
+		&__mobile {
+			background: $white1;
+			border-bottom: 1px solid $very-light-grey;
+			display: flex;
+			justify-content: space-between;
+			padding: 20px;
+		}
+		&__logo {
+			img {
+				width: 105px;
+				height:20px;
+			}
+		}
+		&__menu-button {
+			position: relative;
+			width: 32px;
+		}
+		&__button-bar {
+			background: $black;
+			display: block;
+			position: absolute;
+			top: 8px;
+			left: 0;
+			width: 100%;
+			height: 4px;
+			&:first-child {
+				top: 0px;
+			}
+			&:last-child {
+				top: 16px;
+			}
+		}
+		&__menu {
+			background: $white1;
+			border-bottom: 1px solid $very-light-grey;
+			padding: 20px;
+			display: none;
+			&--active {
+				display: block;
+			}
+			&-item {
+				margin: 8px 0;
+			}
+		}
+		&__pop {
+			padding: 20px;
+			&-item {
+				margin: 8px 0;
+			}
+		}
+	}
+}

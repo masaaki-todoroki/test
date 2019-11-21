@@ -1,0 +1,433 @@
+// -----------------------------------------------------------------
+// Base Style
+// -----------------------------------------------------------------
+html,body {
+		height: 100%;
+	}
+	
+	body {
+		background: $white1;
+		font-family: 'Noto Sans JP','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic', sans-serif;
+		line-height: 1.7;
+		font-size: 16px;
+		color: $black;
+	}
+	
+	a {
+		text-decoration: none;
+	}
+	a:hover {
+		opacity: 0.7;
+	}
+	
+	img {
+		max-width: 100%;
+	}
+	
+	.mainvisual {
+		background: $black;
+		&-slider {
+			&__link {
+				position: relative;
+				display: block;
+				&:hover {
+					opacity: 1;
+				}
+			}
+			&__image {
+				width: 100%;
+			}
+			&__title {
+				position: absolute;
+				bottom: 24px;
+				left: 16px;
+				line-height: 1;
+				color: $white1;
+				font-size: 18px;
+			}
+		}
+	}
+	
+	.whoweare {
+		background: $white3;
+		&__glance {
+		margin-top: 48px;
+		}
+	}
+	
+	.glance {
+		$this: &;
+		display: flex;
+		justify-content: space-between;
+		&__item {
+			width: calc( 100% / 3 - 18px );
+			background: rgba(255,255,255,0.7);
+			border: 1px solid $very-light-grey;
+			position: relative;
+			a {
+				display: block;
+				&:hover {
+				opacity: 1;
+				}
+			}
+			&--effect {
+				&:before, &:after, #{$this}-card:before, #{$this}-card:after {
+					background-color: $azul;
+					display: block;
+					position: absolute;
+					content: '';
+					transition: all 0.4s linear;
+					z-index: 10;
+					opacity: 0;
+				}
+				&:before {
+					bottom: -1px;
+					height: 1px;
+					right: -1px;
+					width: 0px;
+				}
+				&:after {
+					height: 1px;
+					left: -1px;
+					top: -1px;
+					width: 0px;
+				}
+				&:hover {
+				&:before, &:after {
+					width: 100%;
+					width: calc(100% + 1px);
+					opacity: 1;
+				}
+				}
+				#{$this}-card {
+					&:before {
+						height: 0px;
+						right: -1px;
+						top: -1px;
+						width: 1px;
+					}
+					&:after {
+						bottom: -1px;
+						height: 0px;
+						left: -1px;
+						width: 1px;
+					}
+					&:hover {
+						&:before, &:after {
+							height: 100%;
+							height: calc(100% + 1px);
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+	
+		&-card {
+			background-size: 70px;
+			background-position: top 80px right 28px;
+			background-repeat: no-repeat;
+			padding: 32px 32px 40px 32px;
+			font-size: 14px;
+			color: $azul;
+			line-height: 1;
+			&--card01 {
+				background-image:  url(/assets/img/bg_glance_01.svg);
+			}
+			&--card02 {
+				background-image:  url(/assets/img/bg_glance_02.svg);
+			}
+			&--card03 {
+				background-image:  url(/assets/img/bg_glance_03.svg);
+			}
+			&__heading {
+				font-size: 20px;
+			}
+			&__number {
+				margin-top: 16px;
+				font-size: 16px;
+			}
+			&__figure, &__unit{
+				display: inline-block;
+			}
+			&__figure {
+				font-family: $ff-ibm;
+				font-size: 56px;
+				font-weight: lighter;
+				letter-spacing: -0.02em;
+			}
+			&__text {
+				margin-top: 16px;
+			}
+			&__link {
+				margin-top: 24px;
+				span {
+					position: relative;
+					font-size: 16px;
+					color: $black;
+					font-weight: bold;
+					&:after {
+						position: absolute;
+						top: 5px;
+						right: -16px;
+						content: "";
+						width: 16px;
+						height: 16px;
+						background: url(/assets/img/icons/icon_arrow-right.svg) 100% 50% no-repeat;
+						background-size: 8px;
+					}
+				}
+			}
+		}
+	}
+	
+	.news {
+		$this: &;
+		background: $white1;
+		position: relative;
+		top: 60px;
+		transition: all 0.8s ease;
+		&.js-fadein{
+			position: relative;
+			top: 0;
+		}
+		.content {
+		opacity: 0;
+		transition: all 0.8s ease;
+			&.js-fadein{
+				opacity: 1;
+			}
+		}
+		&-list {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 48px;
+			&__item {
+				width: calc( 100% / 3 - 18px );
+				background: $white1;
+				border: 1px solid $very-light-grey;
+				position: relative;
+				a {
+					display: block;
+					&:hover {
+						opacity: 1;
+					}
+				}
+				&--effect {
+					&:before, &:after, #{$this}-card:before, #{$this}-card:after {
+						background-color: $azul;
+						display: block;
+						position: absolute;
+						content: '';
+						transition: all 0.4s linear;
+						z-index: 10;
+						opacity: 0;
+					}
+					&:before {
+						bottom: -1px;
+						height: 1px;
+						right: -1px;
+						width: 0px;
+					}
+					&:after {
+						height: 1px;
+						left: -1px;
+						top: -1px;
+						width: 0px;
+					}
+					&:hover {
+						&:before, &:after {
+							width: 100%;
+							width: calc(100% + 1px);
+							opacity: 1;
+						}
+					}
+					#{$this}-card {
+						&:before {
+							height: 0px;
+							right: -1px;
+							top: -1px;
+							width: 1px;
+						}
+						&:after {
+							bottom: -1px;
+							height: 0px;
+							left: -1px;
+							width: 1px;
+						}
+						&:hover {
+							&:before, &:after {
+								height: 100%;
+								height: calc(100% + 1px);
+								opacity: 1;
+							}
+						}
+					}
+				}
+			}
+		}
+		&-card {
+			padding: 0;
+			color: $black;
+			position: relative;
+			&__image {
+				line-height: 0;
+				img {
+					width: 100%;
+				}
+			}
+			&__content {
+				padding: 24px 24px 40px;
+				height: 100%;
+			}
+			&__text {
+				min-height: 81px;
+			}
+			&__date {
+				margin-top: 16px;
+				font-family: $ff-ibm;
+				font-size: 14px;
+			}
+		}
+		&__link {
+		margin-top: 20px;
+		text-align: right;
+			a {
+				position: relative;
+				font-size: 16px;
+				color: $black;
+				font-weight: bold;
+				padding-right: 34px;
+				&:after {
+					position: absolute;
+					top: 5px;
+					right: 0px;
+					content: "";
+					width: 16px;
+					height: 16px;
+					background: url(/assets/img/icons/icon_arrow-right-line.svg) 100% 50% no-repeat;
+					background-size: 18px;
+					transition: all 0.1s ease-out;
+				}
+				&:hover {
+					opacity: 1;
+					&:after {
+						right: -10px;
+					}
+				}
+			}
+		}
+	}
+	
+	.footer {
+		background: $white1;
+		border-top: 1px solid $very-light-grey;
+		font-family: $ff-ibm;
+		&-menu {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			line-height: 1;
+			&__menu, &__tyolink, &__sns {
+				width: calc( 100% / 3 );
+			}
+			&__menu{
+				text-align: left;
+			}
+			&__tyolink{
+				margin-top: 8px;
+				text-align: right;
+				a {
+					position: relative;
+					padding-right: 24px;
+					img {
+						width: 132px;
+					}
+					&:after {
+						position: absolute;
+						top: 0px;
+						right: 0px;
+						content: "";
+						width: 16px;
+						height: 16px;
+						background: url(/assets/img/icons/icon_outside.svg) 100% 50% no-repeat;
+						background-size: 16px;
+					}
+				}
+			}
+			&-list {
+				&__item {
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 18px;
+				a {
+					font-size: 14px;
+					font-weight: bold;
+					color: $black;
+				}
+				}
+			}
+			&-sns {
+				text-align: center;
+				&__item {
+					display: inline-block;
+					vertical-align: middle;
+					margin-right: 16px;
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+		&-copyright {
+			margin-top: 16px;
+			text-align: center;
+			&__text {
+				font-size: 12px;
+			}
+		}
+	}
+	
+	// （仮）about
+	.about {
+		background: $white1;
+	}
+	.content {
+		&--about {
+		padding: 0;
+		line-height: 0;
+		img {
+			width: 100%;
+		}
+		&-full {
+			padding: 0;
+			line-height: 0;
+			max-width: initial;
+			img {
+				width: 100%;
+			}
+		}
+		}
+	}
+	
+	// （仮）レスポンシブ
+	@include mq(md) {
+		.u-md-hidden {
+		display: none;
+		}
+	}
+	@include mq(sd) {
+		.u-sd-hidden {
+			display: none;
+		}
+		body {
+			padding-top: 0;
+			line-height: 0;
+		}
+		.header--sp {
+			position: fixed;
+			top: 0;
+			left: 0;
+			border-bottom: 1px solid $very-light-grey;
+		}
+}

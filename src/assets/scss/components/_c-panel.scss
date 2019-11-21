@@ -1,0 +1,134 @@
+// -----------------------------------------------------------------
+// Component Panel Style
+// -----------------------------------------------------------------
+
+.c-panel {
+	$this : &;
+	display: flex;
+	flex-wrap: wrap;
+	list-style-type: none;
+	margin: $moduleMarginPC auto;
+	&__item {
+		border: 1px solid $very-light-grey;
+		margin: 0 26px 26px 0;
+		position: relative;
+		width: calc( 100% / 3 - 18px );
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
+		a {
+			color: $black;
+			:hover {
+				opacity: 1;
+			}
+		}
+		&:before, &:after, #{$this}__inner:before, #{$this}__inner:after {
+			background-color: $azul;
+			display: block;
+			position: absolute;
+			content: '';
+			transition: all 0.4s linear;
+			z-index: 10;
+			opacity: 0;
+		}
+		&:before {
+			bottom: -1px;
+			height: 1px;
+			right: -1px;
+			width: 0px;
+		}
+		&:after {
+			height: 1px;
+			left: -1px;
+			top: -1px;
+			width: 0px;
+		}
+		&:hover {
+			&:before, &:after {
+				width: 100%;
+				width: calc(100% + 1px);
+				opacity: 1;
+			}
+		}
+		#{$this}__inner {
+			height: 100%;
+			&:before {
+				height: 0px;
+				right: -1px;
+				top: -1px;
+				width: 1px;
+			}
+			&:after {
+				bottom: -1px;
+				height: 0px;
+				left: -1px;
+				width: 1px;
+			}
+			&:hover {
+			&:before, &:after {
+				height: 100%;
+				height: calc(100% + 1px);
+				opacity: 1;
+			}
+			}
+		}
+	}
+	&__inner {
+		position: relative;
+	}
+	&__image {
+		img {
+			width: 100%;
+		}
+	}
+	&__text {
+		padding: 24px 24px 36px;
+		&--title {
+			font-size: 20px;
+			font-weight: bold;
+		}
+	}
+	&--col4 {
+		#{$this}__item {
+			width: calc( 100% / 4 - 20px );
+			&:nth-child(3n) {
+				margin-right: 26px;
+			}
+			&:nth-child(4n) {
+				margin-right: 0;
+			}
+		}
+	}
+	&--textonly {
+		#{$this}__text {
+			font-size: 18px;
+			font-weight: bold;
+			padding: 24px 24px 48px;
+		}
+	}
+	@include mq(md) {
+		justify-content: space-between;
+		margin: $moduleMarginSP auto;
+		&__item {
+			width: calc( 50% - 8px);
+			margin: 0 0 16px 0;
+		}
+		&--col4 {
+			#{$this}__item {
+				width: calc( 50% - 8px);
+				margin: 0 0 16px 0;
+				&:nth-child(3n) {
+					margin-right: 0;
+				}
+			}
+		}
+		&__text {
+			padding: 8px 8px 24px;
+		}
+		&--textonly {
+			#{$this}__text {
+				padding: 8px 8px 24px;
+			}
+		}
+	}
+}

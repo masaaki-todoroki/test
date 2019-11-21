@@ -1,0 +1,30 @@
+// -----------------------------------------------------------------
+// Component Heading Style
+// -----------------------------------------------------------------
+.c-heading {
+	margin-top: $basicMarginSP;
+	&:first-child {
+		margin-top: 0;
+	}
+	&__text {
+		color: $black;
+		font-weight: bold;
+		line-height: 1.4;
+		&--lv1 {
+			font-size: 36px;
+		}
+		&--lv2 {
+			font-size: 32px;
+		}
+		&--lv3 {
+			font-size: 24px;
+		}
+		&--lv4 {
+			font-size: 20px;
+			font-weight: normal;
+		}
+	}
+	@include mq(ld) {
+		margin-top: $basicMarginPC;
+	}
+}

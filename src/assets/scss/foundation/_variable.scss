@@ -1,0 +1,23 @@
+$contentWidth: 1170px; // コンテンツ幅
+
+$basicMarginPC: 64px; // 基本マージンPC
+$basicMarginSP: $basicMarginPC / 2; // 基本マージンSP
+
+$moduleMarginPC: $basicMarginPC * 0.75; // カタマリ系コンポネ同士のマージンPC
+$moduleMarginSP: $moduleMarginPC / 2; // カタマリ系コンポネ同士のマージンSP
+
+$parapraphMarginPC: $moduleMarginPC / 2; // 段落系コンポネ同士のマージンPC
+$parapraphMarginSP: $parapraphMarginPC / 1.5; // 段落系コンポネ同士のマージンSP
+
+$headerHeightPC: 90px; // ヘッダーの高さPC
+$headerHeightSP: 63px; // ヘッダーの高さSP
+
+$white1: #fff; // 白
+$white2: #f5f5f5; // lang-nav
+$white3: #f8f8f8; // who we areのBG色
+$brownish-grey: #666; // 茶色味のグレー
+$very-light-grey: #ddd; // うっすいグレー
+$black: #222; // 本文のテキストカラー
+$azul: #345cd6; // 見出し下のボーダーカラー
+
+$ff-ibm: 'IBM Plex Sans', sans-serif; // メニュー等の英数字用フォント

@@ -1,0 +1,22 @@
+// -----------------------------------------------------------------
+// Component Figure Style
+// -----------------------------------------------------------------
+.c-figure {
+	margin: $parapraphMarginPC auto;
+	&__img {
+		display: block;
+		margin: 0 auto;
+	}
+	&__caption{
+		color: $brownish-grey;
+		font-size: 13px;
+		margin-top: $parapraphMarginPC;
+		text-align: center;
+	}
+	@include mq(md) {
+		margin: $parapraphMarginSP auto;
+		&__caption{
+			margin-top: $parapraphMarginSP;
+		}
+	}
+}
